@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+
+
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="{{ " css/bootstrap.min.css" | relURL }}"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk">
+  <script src="{{ " js/jquery-3.5.1.min.js" | relURL }}"></script>
+  <script src="{{ " js/bootstrap.min.js" | relURL }}"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"></script>
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta property="og:title" content="{{ if ne .RelPermalink " /" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title
+    }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+
+  {{ if .IsPage }}
+  <meta property="og:type" content="article" />
+
+  <meta property="og:article:published_time" content="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" | safeHTML }}" />
+
+  {{ range .Params.tags }}
+  <meta property="og:article:tag" content="{{ . }}" />
+  {{ end }}
+  {{ else }}
+  <meta property="og:type" content="website" />
+  {{ end }}
+
+  <title>
+    {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+  </title>
+
+  <meta name="description" content="{{ .Site.Params.description }}" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="{{.Site.BaseURL}}images/favicon.ico">
+  <link rel="apple-touch-icon" href="{{.Site.BaseURL}}images/apple-touch-icon.png" />
+
+  <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/screen.css" />
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+  {{ if .Site.Params.RSSLink }}
+  <link href="{{ .Site.Params.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{else}}
+  {{ if ne .RelPermalink "/" }}
+  <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+  {{if .IsNode}}
+  <link href="{{ with .OutputFormats.Get " RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate"
+    type="application/rss+xml" title="{{ if ne .RelPermalink " /" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
+  {{end}}
+  {{end}}
+  {{hugo.Generator}}
+
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  {{with .Site.Params.googleAnalyticsUserID }}
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', '{{.}}', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  {{end}}
+</head>
+
+<body>
+  <header>
+    <!-- <div class="wrapper">
+      <a href="{{.Site.BaseURL}}" class="sitelogo"> Test</a>
+      <nav class="header-menu">{{partial "navigation" .}}</nav>
+    </div> -->
+
+    <!-- <a class="navbar-brand" href="/">{{ $.Site.Title }}</a> -->
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+    <div class="navcontainer collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navlinks navbar-nav mr-auto">
+
+        {{ range .Site.Menus.navbar }}
+        {{ if .HasChildren }}
+        <span class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown-{{ .Identifier }}" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown-{{ .Identifier  }}">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL }}">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </span>
+        {{ else }}
+        <div class="nav-item">
+          <a class="nav-link" href="{{ .URL }}">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+        </div>
+        {{ end }}
+        {{ end }}
+        <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown-categories" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Post categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-categories">
+              {{ range $key, $value := $.Site.Taxonomies.categories }}
+              <a class="dropdown-item" href="{{ " categories/" | relURL }}{{ $key }}">{{ $key | humanize }}</a>
+              {{ end }}
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown-categories" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Post categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-categories">
+              {{ range $key, $value := $.Site.Taxonomies.categories }}
+              <a class="dropdown-item" href="{{ " categories/" | relURL }}{{ $key }}">{{ $key | humanize }}</a>
+              {{ end }}
+            </div>
+          </li> -->
+      </div>
+    </div>
+
+
+
+  </header>
+  <main>
+    <div class="wrapper">
+
+
+      <!-- </head>
+<body class="nav-closed">
+<div id="particles-js"></div>
+  {{ partial "navigation.html" . }}
+
+ <div class="site-wrapper"> -->
