@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data on Multi-Clouding Solutions</title>
-    <link>https://ascentdatasolutions.com/tags/data/</link>
+    <link>https://multi-clouding.com/tags/data/</link>
     <description>Recent content in data on Multi-Clouding Solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2022</copyright>
-    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ascentdatasolutions.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://ascentdatasolutions.com/blog/sample6/</link>
+      <link>https://multi-clouding.com/blog/sample6/</link>
       <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ascentdatasolutions.com/blog/sample6/</guid>
+      <guid>https://multi-clouding.com/blog/sample6/</guid>
       <description>Multi-Clouding Solutions enables your data to act and produce outcomes. Data is constantly changing. We make it possible for your data and operations teams to set up data expectations and automate processes based on its status.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://ascentdatasolutions.com/blog/sample3/</link>
+      <link>https://multi-clouding.com/blog/sample3/</link>
       <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ascentdatasolutions.com/blog/sample3/</guid>
+      <guid>https://multi-clouding.com/blog/sample3/</guid>
       <description>CASE STUDIES Mining Industry </description>
     </item>
     
     <item>
       <title>Business Intelligence</title>
-      <link>https://ascentdatasolutions.com/blog/sample2/</link>
+      <link>https://multi-clouding.com/blog/sample2/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ascentdatasolutions.com/blog/sample2/</guid>
+      <guid>https://multi-clouding.com/blog/sample2/</guid>
       <description>As reference #1 let’s use a traditional BI-oriented data stack which looks approximately like this:
 Google Big Query or any other DWH if we take a different organization is in the middle of the stack. There are multiple data sources and ETL or ELT software that collects data from these data sources and puts it into the DWH. Afterward, as soon as data are in the data warehouse, Looker is connected to it for business intelligence and since it is a part of Google Cloud it integrates perfectly with Google Big Query.</description>
     </item>
     
     <item>
       <title>Deploying Static Websites with Hugo &amp; GoDaddy</title>
-      <link>https://ascentdatasolutions.com/blog/sample1/</link>
+      <link>https://multi-clouding.com/blog/sample1/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ascentdatasolutions.com/blog/sample1/</guid>
+      <guid>https://multi-clouding.com/blog/sample1/</guid>
       <description>Hugo + Netlify + GoDaddy _How to create a Hugo Website Hugo is a potent static website creator created in the GO programming language. You may use it to construct uncluttered, up-to-date websites with minimum overhead that load rapidly.
 Buying a domain in GoDaddyDownloading your favorite hugo theme in local repository with GithubDeploying the website in NetlifyMagic ✨ You generally don&amp;rsquo;t want to spend a lot of time building a website that will be straightforward and content-driven.</description>
     </item>

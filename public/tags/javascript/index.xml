@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Multi-Clouding Solutions</title>
-    <link>https://ascentdatasolutions.com/tags/javascript/</link>
+    <link>https://multi-clouding.com/tags/javascript/</link>
     <description>Recent content in Javascript on Multi-Clouding Solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2022</copyright>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ascentdatasolutions.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying Static Websites with Hugo &amp; GoDaddy</title>
-      <link>https://ascentdatasolutions.com/blog/sample1/</link>
+      <link>https://multi-clouding.com/blog/sample1/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ascentdatasolutions.com/blog/sample1/</guid>
+      <guid>https://multi-clouding.com/blog/sample1/</guid>
       <description>Hugo + Netlify + GoDaddy _How to create a Hugo Website Hugo is a potent static website creator created in the GO programming language. You may use it to construct uncluttered, up-to-date websites with minimum overhead that load rapidly.
 Buying a domain in GoDaddyDownloading your favorite hugo theme in local repository with GithubDeploying the website in NetlifyMagic ✨ You generally don&amp;rsquo;t want to spend a lot of time building a website that will be straightforward and content-driven.</description>
     </item>
