@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Multi-Clouding Solutions</title>
+    <link>https://multi-clouding.com/tags/about/</link>
+    <description>Recent content in About on Multi-Clouding Solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - 2022</copyright>
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://multi-clouding.com/about/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/about/</guid>
+      <description>Multi-Clouding Blog posts are about cloud architecture, POC&amp;rsquo;s and guidelines about cloud-based analytics solutions Data is constantly changing. Cloud providers make it possible for your data and operations teams to set up data expectations and automate processes.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://multi-clouding.com/blog/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/blog/</guid>
+      <description>Multi-Clouding Solutions enables your data to act and produce outcomes. Data is constantly changing. We make it possible for your data and operations teams to set up data expectations and automate processes based on its status.</description>
+    </item>
+    
+  </channel>
+</rss>
