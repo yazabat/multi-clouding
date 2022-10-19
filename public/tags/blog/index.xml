@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Multi-Clouding Solutions</title>
+    <link>https://multi-clouding.com/tags/blog/</link>
+    <description>Recent content in blog on Multi-Clouding Solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - 2022</copyright>
+    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Azure Functions for ETL with Power BI reports automation</title>
+      <link>https://multi-clouding.com/blog/sample5/</link>
+      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/blog/sample5/</guid>
+      <description>Extract import osimport yamlimport pyodbcfrom azure.storage.blob import ContainerClientimport csvfrom azure.storage.blob import BlobServiceClientimport pandas as pdimport findsparkfrom urllib.parse import urlparsefrom io import BytesIOimport urllibimport sqlalchemy as saclass IngestaData:__config = &amp;#34;&amp;#34;#Download parquet to DataFramedef __azure_download_parquet_to_df(url=None):try:if url:connect_str = IngestaData.__config[&amp;#34;azure_storage_connectionstring&amp;#34;] blob_service_client = BlobServiceClient.from_connection_string(connect_str)path = urlparse(url).pathpath = path.split(&amp;#34;/&amp;#34;) container = path[0] + &amp;#34;/&amp;#34; + path[1]blob = &amp;#39;/&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Snowflake</title>
+      <link>https://multi-clouding.com/blog/sample4/</link>
+      <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/blog/sample4/</guid>
+      <description>
+Architecting, Designing, and Deploying on the Snowflake Data Cloud Esto es un documento de Microsoft Office incrustado con tecnología de Office. </description>
+    </item>
+    
+    <item>
+      <title>Business Intelligence</title>
+      <link>https://multi-clouding.com/blog/sample2/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/blog/sample2/</guid>
+      <description>As reference #1 let’s use a traditional BI-oriented data stack which looks approximately like this:
+Google Big Query or any other DWH if we take a different organization is in the middle of the stack. There are multiple data sources and ETL or ELT software that collects data from these data sources and puts it into the DWH. Afterward, as soon as data are in the data warehouse, Looker is connected to it for business intelligence and since it is a part of Google Cloud it integrates perfectly with Google Big Query.</description>
+    </item>
+    
+  </channel>
+</rss>
