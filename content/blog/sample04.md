@@ -1,7 +1,7 @@
 +++
 author = "ADS"
 comments = false
-date = "2022-09-13"
+date = "2022-09-30"
 draft = false
 image = ""
 menu = ""
@@ -14,6 +14,6 @@ tags = ["blog"]
 
 ![Hugo_themes](/blog/images/snowflake_01.png)
 
-#### Architecting, Designing, and Deploying on the Snowflake Data Cloud
+#### Presentation about Snowflake Ingestion of Data
 
 {{< snowslides  >}}

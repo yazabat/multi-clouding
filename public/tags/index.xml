@@ -9,18 +9,9 @@
     <copyright>All rights reserved - 2022</copyright>
     <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>data</title>
-      <link>https://multi-clouding.com/tags/data/</link>
-      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>blog</title>
       <link>https://multi-clouding.com/tags/blog/</link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://multi-clouding.com/tags/blog/</guid>
       <description></description>
@@ -45,47 +36,11 @@
     </item>
     
     <item>
-      <title>CSS</title>
-      <link>https://multi-clouding.com/tags/css/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <title>data</title>
+      <link>https://multi-clouding.com/tags/data/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://multi-clouding.com/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html</title>
-      <link>https://multi-clouding.com/tags/html/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://multi-clouding.com/tags/hugo/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JAMStack</title>
-      <link>https://multi-clouding.com/tags/jamstack/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/tags/jamstack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://multi-clouding.com/tags/javascript/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/tags/javascript/</guid>
+      <guid>https://multi-clouding.com/tags/data/</guid>
       <description></description>
     </item>
     

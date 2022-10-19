@@ -7,25 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2022</copyright>
-    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>https://multi-clouding.com/blog/sample6/</link>
-      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/blog/sample6/</guid>
-      <description>Multi-Clouding Blog posts are about cloud architecture, POC&amp;rsquo;s and guidelines about cloud-based analytics solutions. Data is constantly changing. Cloud providers make it possible for your data and operations teams to set up data expectations and automate processes.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://multi-clouding.com/blog/sample3/</link>
-      <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/blog/sample3/</guid>
-      <description>CASE STUDIES Mining Industry </description>
-    </item>
-    
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Business Intelligence</title>
       <link>https://multi-clouding.com/blog/sample2/</link>
@@ -34,16 +16,6 @@
       <guid>https://multi-clouding.com/blog/sample2/</guid>
       <description>As reference #1 let’s use a traditional BI-oriented data stack which looks approximately like this:
 Google Big Query or any other DWH if we take a different organization is in the middle of the stack. There are multiple data sources and ETL or ELT software that collects data from these data sources and puts it into the DWH. Afterward, as soon as data are in the data warehouse, Looker is connected to it for business intelligence and since it is a part of Google Cloud it integrates perfectly with Google Big Query.</description>
-    </item>
-    
-    <item>
-      <title>Deploying Static Websites with Hugo &amp; GoDaddy</title>
-      <link>https://multi-clouding.com/blog/sample1/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/blog/sample1/</guid>
-      <description>Hugo + Netlify + GoDaddy _How to create a Hugo Website Hugo is a potent static website creator created in the GO programming language. You may use it to construct uncluttered, up-to-date websites with minimum overhead that load rapidly.
-Buying a domain in GoDaddyDownloading your favorite hugo theme in local repository with GithubDeploying the website in NetlifyMagic ✨ You generally don&amp;rsquo;t want to spend a lot of time building a website that will be straightforward and content-driven.</description>
     </item>
     
   </channel>

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2022</copyright>
-    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://multi-clouding.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snowflake</title>
+      <link>https://multi-clouding.com/blog/sample4/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://multi-clouding.com/blog/sample4/</guid>
+      <description>
+Presentation about Snowflake Ingestion of Data Esto es un documento de Microsoft Office incrustado con tecnología de Office. </description>
+    </item>
+    
     <item>
       <title>Using Azure Functions for ETL with Power BI reports automation</title>
       <link>https://multi-clouding.com/blog/sample5/</link>
@@ -15,16 +25,6 @@
       
       <guid>https://multi-clouding.com/blog/sample5/</guid>
       <description>Extract import osimport yamlimport pyodbcfrom azure.storage.blob import ContainerClientimport csvfrom azure.storage.blob import BlobServiceClientimport pandas as pdimport findsparkfrom urllib.parse import urlparsefrom io import BytesIOimport urllibimport sqlalchemy as saclass IngestaData:__config = &amp;#34;&amp;#34;#Download parquet to DataFramedef __azure_download_parquet_to_df(url=None):try:if url:connect_str = IngestaData.__config[&amp;#34;azure_storage_connectionstring&amp;#34;] blob_service_client = BlobServiceClient.from_connection_string(connect_str)path = urlparse(url).pathpath = path.split(&amp;#34;/&amp;#34;) container = path[0] + &amp;#34;/&amp;#34; + path[1]blob = &amp;#39;/&amp;#39;.</description>
-    </item>
-    
-    <item>
-      <title>Snowflake</title>
-      <link>https://multi-clouding.com/blog/sample4/</link>
-      <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://multi-clouding.com/blog/sample4/</guid>
-      <description>
-Architecting, Designing, and Deploying on the Snowflake Data Cloud Esto es un documento de Microsoft Office incrustado con tecnología de Office. </description>
     </item>
     
     <item>

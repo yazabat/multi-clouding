@@ -152,9 +152,9 @@
   
   <div class="list-group">
     
-    <a class="list-group-item list-group-item-action" href="https://multi-clouding.com/blog/sample5/">Thu Sep 29, 2022 | Using Azure Functions for ETL with Power BI reports automation</a>
+    <a class="list-group-item list-group-item-action" href="https://multi-clouding.com/blog/sample4/">Fri Sep 30, 2022 | Snowflake</a>
     
-    <a class="list-group-item list-group-item-action" href="https://multi-clouding.com/blog/sample4/">Tue Sep 13, 2022 | Snowflake</a>
+    <a class="list-group-item list-group-item-action" href="https://multi-clouding.com/blog/sample5/">Thu Sep 29, 2022 | Using Azure Functions for ETL with Power BI reports automation</a>
     
     <a class="list-group-item list-group-item-action" href="https://multi-clouding.com/blog/sample2/">Sat Jan 1, 2022 | Business Intelligence</a>
     
@@ -164,182 +164,14 @@
 	   
 <article class="post blog">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://multi-clouding.com/blog/sample5/">Using Azure Functions for ETL with Power BI reports automation</a></h2>
+        <h2 class="post-title"><a href="https://multi-clouding.com/blog/sample4/">Snowflake</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
           <section class="post-content">
-            <p><img src="https://multi-clouding.com/blog/images/AzureSynapse.jpg" alt="Hugo_themes">
-<img src="https://multi-clouding.com/blog/images/AzureSynapse2.jpg" alt="Hugo_themes">
-<img src="https://multi-clouding.com/blog/images/AzureSynapse3.jpg" alt="Hugo_themes"></p>
-<h2 id="extract">Extract</h2>
-<pre tabindex="0"><code>import os
-import yaml
-import pyodbc
-from azure.storage.blob import ContainerClient
-import csv
-from azure.storage.blob import BlobServiceClient
-import pandas as pd
-import findspark
-from urllib.parse import urlparse
-from io import BytesIO
-import urllib
-import sqlalchemy as sa
-
-class IngestaData:
-
-    __config = &#34;&#34;
-
-    #Download parquet to DataFrame
-    def __azure_download_parquet_to_df(url=None):
-        try:
-            if url:
-                connect_str = IngestaData.__config[&#34;azure_storage_connectionstring&#34;] 
-                blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-                path = urlparse(url).path
-                path = path.split(&#34;/&#34;)            
-                container = path[0] + &#34;/&#34; + path[1]
-                blob = &#39;/&#39;.join(path[2:])
-                blob_client = blob_service_client.get_blob_client(container=container, blob=blob)
-                with BytesIO() as input_blob:
-                    blob_client.download_blob().download_to_stream(input_blob)
-                    input_blob.seek(0)
-                    df = pd.read_parquet(input_blob, engine=&#39;pyarrow&#39;)
-                return df
-            else:
-                return None
-        except OSError as err:
-            print(&#34;OS error: {0}&#34;.format(err))
-        except ValueError as err:
-            print(&#34;ValueError error: {0}&#34;.format(err))
-        except BaseException as err:
-            print(f&#34;Unexpected {err=}, {type(err)=}&#34;)
-            raise
-
-    #From Parquet to Synapse
-    def __ingestaSynapse (df):
-        try:
-            server = &#39;zzzzzzdwg.sql.azuresynapse.net&#39; ##&lt;server&gt;.database.windows.net&#39;
-            database = &#39;dwh&#39; 
-            username = &#39;JamesBond&#39; 
-            password = &#39;123456.&#39;   
-            driver= &#39;{ODBC Driver 17 for SQL Server}&#39;
-
-            cnxn = pyodbc.connect(&#39;DRIVER=&#39; + driver +&#39;;SERVER=&#39;+server+&#39;;DATABASE=&#39;+database+&#39;;UID=&#39;+username+&#39;;PWD=&#39;+ password)
-            cursor = cnxn.cursor()
-            
-            for index, row in df.iterrows():
-                cursor.execute(&#34;INSERT INTO dbo.booking (BOOKINGID,BOOKINGNAME,BOOKINGREFERENCENUMBER) values(?,?,?)&#34;, row.BOOKINGID, row.BOOKINGNAME, row.BOOKINGREFERENCENUMBER)
-            cnxn.commit()
-            cursor.close()
-        except OSError as err:
-                print(&#34;OS error: {0}&#34;.format(err))
-
-    def iniciarIngesta(config):
-
-        IngestaData.__config = config
-
-        #FROM PARQUET TO DF
-        df = IngestaData.__azure_download_parquet_to_df(IngestaData.__config[&#34;archivos_container_clean_name&#34;]  + &#34;/booking.parquet&#34;)
-
-        #PARQUET TO SYNAPSE
-        IngestaData.__ingestaSynapse(df)
-</code></pre><h2 id="transform">Transform</h2>
-<pre tabindex="0"><code>import os
-import yaml
-from azure.storage.blob import ContainerClient
-import csv
-from azure.storage.blob import BlobServiceClient
-import pandas as pd
-import findspark
-from urllib.parse import urlparse
-from io import BytesIO
-
-class Transformacion:
-
-    __config = &#34;&#34;
-
-    #METHOD FOR DOWNLOADING CSV TO DF
-    def __azure_download_csv_to_df(url=None):
-        try:
-            if url:
-                blob_service_client = BlobServiceClient.from_connection_string(Transformacion.__config[&#34;azure_storage_connectionstring&#34;])
-                path = urlparse(url).path
-                path = path.split(&#34;/&#34;)            
-                container = path[0] + &#34;/&#34; + path[1]
-                blob = &#39;/&#39;.join(path[2:])
-                blob_client = blob_service_client.get_blob_client(container=container, blob=blob)
-                with BytesIO() as input_blob:
-                    blob_client.download_blob().download_to_stream(input_blob)
-                    input_blob.seek(0)
-                    df = pd.read_csv(input_blob , sep=&#39;;&#39;,  encoding=&#39;latin-1&#39;)
-                return df
-            else:
-                return None
-        except OSError as err:
-            print(&#34;OS error: {0}&#34;.format(err))
-        except ValueError as err:
-            print(&#34;ValueError error: {0}&#34;.format(err))
-        except BaseException as err:
-            print(f&#34;Unexpected {err=}, {type(err)=}&#34;)
-            raise
-    
-    def iniciarTransformacion(config):
-        Transformacion.__config = config
-        print(&#34;Transformacion&#34;)
-
-        #FROM CSV TO DATAFRAME
-        df = Transformacion.__azure_download_csv_to_df( Transformacion.__config[&#34;archivos_container_name&#34;]+ &#34;/booking.csv&#34;)
-
-        #CONVERT CSV TO PARQUET
-        df.to_parquet(Transformacion.__config[&#34;source_folder&#34;] + &#34;/parquet/booking.parquet&#34;)
-
-        #FROM PARQUET TO BLOB STORAGE
-        connect_str = Transformacion.__config[&#34;azure_storage_connectionstring&#34;]
-        blob_service_client = ContainerClient.from_connection_string(connect_str,Transformacion.__config[&#34;archivos_container_clean_name&#34;])
-        blob_client = blob_service_client.get_blob_client(&#39;booking.parquet&#39;)
-        with open(Transformacion.__config[&#34;source_folder&#34;] + &#34;/parquet/booking.parquet&#34;,&#34;rb&#34;) as data:
-            blob_client.upload_blob(data, overwrite=True)
-</code></pre><h2 id="load">Load</h2>
-<pre tabindex="0"><code>import os
-import yaml
-from azure.storage.blob import ContainerClient
-import csv
-
-class Carga:
-
-    __config = &#34;&#34;
-
-    # READING CSV FILES
-    def __get_files(dir):
-        with os.scandir(dir) as entries:
-            for entry in entries:
-                if entry.is_file():# and not entry.name.startwith(&#39;.&#39;):
-                    yield entry
-
-    #UPLOAD FILES  CSV TO BLOB STORAGE
-    def __upload(files,ConnectionString,Container_blob):
-        container_client = ContainerClient.from_connection_string(ConnectionString,Container_blob)
-        
-        print(&#34;UPLOADING TO BLOB STORAGE&#34;)
-        
-        for file in files:
-            blob_client = container_client.get_blob_client(file.name)
-            with open(file.path,&#34;rb&#34;) as data:
-                blob_client.upload_blob(data, overwrite=True)
-                print(&#34; UPLOADING FILES test2022dw&#34;)
-
-
-    def iniciandoCarga(config):
-
-        Carga.__config = config
-        archivos = Carga.__get_files(Carga.__config[&#34;source_folder&#34;] + &#34;/csv&#34;)
-
-        #UPLOADING CSV TO CLOUD
-        Carga.__upload(archivos,Carga.__config[&#34;azure_storage_connectionstring&#34;], Carga.__config[&#34;archivos_container_name&#34;])
-</code></pre><p><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link" target="_blank">
-    https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link
-  </a></p>
+            <p><img src="https://multi-clouding.com/blog/images/snowflake_01.png" alt="Hugo_themes"></p>
+<h4 id="presentation-about-snowflake-ingestion-of-data">Presentation about Snowflake Ingestion of Data</h4>
+<iframe src="https://onedrive.live.com/embed?cid=F23183C5223F0AAA&amp;resid=F23183C5223F0AAA%2157939&amp;authkey=ADfsb0WvyUW8Cwg&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" width="476px" height="288px" frameborder="0">Esto es un documento de <a target="_blank" href="https://office.com">Microsoft Office</a> incrustado con tecnología de <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
 
           </section>
       </p>
@@ -358,8 +190,8 @@ class Carga:
                 <a href="https://multi-clouding.com/tags/blog/">#blog</a>,
             
         
-        <time class="post-date" datetime="2022-09-29T00:00:00Z">
-            29 Sep 2022
+        <time class="post-date" datetime="2022-09-30T00:00:00Z">
+            30 Sep 2022
         </time>
     </footer>
 </article>
