@@ -10,8 +10,8 @@ share = false
 slug = "sample6"
 title= "About"
 +++
-**Multi-Clouding Solutions** enables your data to act and produce outcomes.
-Data is constantly changing. We make it possible for your data and operations teams to set up data expectations and automate processes based on its status.
+**Multi-Clouding** Blog posts are about cloud architecture, POC's and guidelines about cloud-based analytics solutions.
+Data is constantly changing. Cloud providers make it possible for your data and operations teams to set up data expectations and automate processes.
 
 
 
