@@ -89,3 +89,8 @@ Getting a static website up and running is simple and fast with Hugo. You can us
    [Github]: <http://daringfireball.net>
     [Win]: <https://www.youtube.com/watch?v=C04dlR1Ufj4>
    
+
+{{< github "yazabat/scraping" >}}
+
+
+{{< gist yazabat bf4bfdb136e55b56dc0fe7a2f83a101a >}}
