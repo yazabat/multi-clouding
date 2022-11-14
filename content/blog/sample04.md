@@ -17,3 +17,5 @@ tags = ["blog"]
 #### Presentation about Snowflake Ingestion of Data
 
 {{< snowslides  >}}
+
+{{< youtube ZfG0w4pi6H8 >}}
